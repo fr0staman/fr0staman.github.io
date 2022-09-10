@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>fr0staman on GitHub</title>
+  <meta name="description" content="Curious developer working with JavaScript, TypeScript and Rust.">
+  <style type="text/css">
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  background: #fbfbfb;
+  color: #121735;
+  --card-hover: #c2e7ff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-style {
+  list-style: inside;
+}
+main {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+header {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  gap: 8px
+}
+
+nav a {
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.logo, nav a:hover {
+  transition: background-color 300ms cubic-bezier(0.2, 0, 0, 1);
+  box-shadow: 0 3px 5px rgba(0,0,0,0.12);
+}
+
+.logo, nav a:active {
+  transition: background-color 300ms cubic-bezier(0.2, 0, 0, 1);
+  box-shadow: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  padding-right: 10px;
+  border-radius: 20px;
+}
+
+.logo:active {
+  background: #ddd;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  margin-right: 1rem;
+}
+
+
+.hero {
+  margin: 3rem 0;
+}
+
+.hero h1,
+.hero h2 {
+  font-size: 2.3rem;
+  margin: 0;
+}
+
+.hero h2 {
+  opacity: 0.7;
+}
+
+.telegram {
+  background-color: #0088cc;
+}
+
+.telegram:hover {
+  background-color: #0099dd !important;
+}
+
+.telegram:active {
+  background-color: #0099dd !important;
+}
+
+.github {
+  background-color: #333;
+}
+
+.github:hover {
+  background-color: #444 !important;
+}
+
+.github:active {
+  background-color: #444 !important;
+}
+
+.cards a {
+  display: flex;
+  flex: 1;
+  margin-bottom: 2rem;
+}
+
+.cards section {
+  margin-left: 1.5rem;
+  flex: 1;
+}
+
+.cards h3 {
+  margin: 0.8rem 0 0.5rem 0;
+  font-size: 1.75rem;
+}
+
+.cards p {
+  padding: 0;
+  margin: 0;
+}
+.stacks {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.stack-wrapper {
+  width: 100%;
+  position: relative;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.cards a {
+  padding: 1.5rem;
+  border-radius: 24px;
+  transition: border-radius 300ms cubic-bezier(0.2, 0, 0, 1), background-color 300ms cubic-bezier(0.2, 0, 0, 1);
+  background: rgba(11,87,208,.05);
+}
+
+.cards a:hover {
+  background: var(--card-hover);
+}
+
+.cards a:active {
+  border-radius: 48px;
+  outline: initial;
+  background: var(--card-hover);
+  box-shadow: 0;
+}
+
+.cards li {
+  width: 100%;
+  display: flex;
+}
+
+@media (min-resolution: 2dppx) {
+  * {
+    text-rendering: geometricPrecision;
+  }
+}
+
+@media (min-width: 800px) {
+  main {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  header {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .hero {
+    margin: 6rem 0 8rem 0;
+  }
+
+  .hero h1,
+  .hero h2 {
+    font-size: 4rem;
+  }
+
+  .cards {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cards li {
+    width: calc(50% - 1rem);
+    display: flex;
+  }
+
+  .cards li.big {
+    width: 100%;
+  }
+
+  .stack-wrapper {
+    flex: 0 0 50%;
+    max-width: 0 0 50%;
+  }
+
+}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/" class="logo">
+      <img src="https://avatars.githubusercontent.com/u/77665176?s=120&v=4" alt="fr0staman avatar">
+      <span>fr0staman</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a class="github"   href="https://github.com/fr0staman">GitHub</a></li>
+        <li><a class="telegram" href="https://t.me/fr0staman">Telegram</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>I'm fr0staman.</h1>
+      <h2>Curious developer.</h2>
+    </section>
+    <h2>Tech stack</h2>
+    <ul class="cards stacks"></ul>
+    <h2>My projects</h2>
+    <ul class="cards">
+      <li>
+        <a href="https://play.google.com/store/apps/details?id=com.abillslite/">
+          <img height="140" width="140" src="./assets/images/ABillS_Lite.png">
+          <section data-repo="ABillSLite">
+            <h3>ABillS Lite</h3>
+            <p>Modern mobile app for Internet service provider</p>
+          </section>
+        </a>
+      </li>
+      <li>
+        <a href="https://t.me/fr0staman_bot/">
+          <img height="140" width="140" src="./assets/images/fr0staman_bot.png">
+          <section data-repo="fr0staman_bot">
+            <h3>fr0staman_bot</h3>
+            <p>Popular funny Telegram bot</p>
+          </section>
+        </a>
+      </li>
+    </ul>
+    <h2>Skills</h2>
+    <p>React, React Native (RN CLI), JavaScript, TypeScript, Bootstrap, Material UI, React-Router, Jest, axios, ES6+, Redux, REST API, MySQL, PostgreSQL, Git</p>
+    <h2>Highlights</h2>
+      <ul class="list-style">
+        <li>Supporting and rewriting complex web admin/user panel</li>
+        <li>Code refactoring, adding Eslint and Prettier</li>
+        <li>Migrating project to Typescript</li>
+        <li>Code review</li>
+      </ul>
+    <h2>Looking for</h2>
+    <p>
+      I’m looking for the opportunity to gain new various skills as well as develop existing ones.
+      <br>
+      I’m looking for a project based primarily on Typescript and React Native.
+      <br>
+      Ideally, with an opportunity to become a FullStack React/Rust engineer in the future.
+      <br>
+      It's interesting for me to mentor someone and getting feedback.
+    </p>
+  </main>
+  <script>
+    const stacks = [
+      {
+        name: "React / React Native",
+        img: "./assets/images/react.svg",
+        desc: "1+ year of experience",
+        big: true
+      },
+      {
+        name: "Typescript",
+        img: "./assets/images/typescript.svg",
+        desc: "with React Native"
+      },
+      {
+        name: "Javascript",
+        img: "./assets/images/javascript.svg",
+        desc: "with React Native"
+      },
+      {
+        name: "Python",
+        img: "./assets/images/python.svg",
+        desc: "pet projects"
+      },
+      {
+        name: "Rust",
+        img: "./assets/images/rust.svg",
+        desc: "in learning"
+      }
+    ];
+    const stackList = document.querySelector(".stacks");
+    stacks.forEach(el => {
+      const name = document.createElement('h3');
+      name.append(document.createTextNode(el.name))
+      
+      const image = document.createElement('img');
+      image.height = 92;
+      image.width = 92;
+      image.src = el.img;
+      
+      const section = document.createElement('section');
+      section.appendChild(name);
+      if (el.desc) {
+        const description = document.createElement('p');
+        description.append(document.createTextNode(el.desc));
+        section.appendChild(description)
+      }
+
+      const stack = document.createElement('a');
+      stack.className = 'stack-wrapper';
+      stack.appendChild(image);
+      stack.appendChild(section)
+
+      const li = document.createElement('li');
+      li.appendChild(stack);
+      el.big ? li.className = "big" : null;
+      stackList.appendChild(li)
+    })
+  </script>
+</body>
+</html>
