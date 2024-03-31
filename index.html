@@ -10,6 +10,42 @@
       content="Curious developer working with React Native, TypeScript and Rust."
     />
     <style type="text/css">
+      header,
+      main {
+        max-width: 1050px;
+        margin: 0 auto;
+      }
+
+      .logo,
+      header,
+      nav ul {
+        display: flex;
+      }
+
+      .logo,
+      nav a {
+        border-radius: 20px;
+        transition: background-color 0.3s cubic-bezier(0.2, 0, 0, 1);
+      }
+
+      .cards a:hover,
+      .repo-list a:hover {
+        background: var(--card-hover);
+      }
+
+      .logo,
+      .skill-badge,
+      nav a {
+        transition: background-color 0.3s cubic-bezier(0.2, 0, 0, 1);
+      }
+
+      .cards a,
+      .repo-list a {
+        background: var(--card);
+        transition: border-radius 0.3s cubic-bezier(0.2, 0, 0, 1),
+          background-color 0.3s cubic-bezier(0.2, 0, 0, 1);
+      }
+
       *,
       ::after,
       ::before {
@@ -29,6 +65,7 @@
         background: #fbfbfb;
         color: #121735;
         --card-hover: #c2e7ff;
+        --card: rgba(11, 87, 208, 0.05);
       }
 
       a {
@@ -42,64 +79,54 @@
         padding: 0;
       }
 
-      .list-style {
-        list-style: inside;
-      }
       main {
-        max-width: 1050px;
-        margin: 0 auto;
         padding: 0 1rem;
       }
 
       header {
-        max-width: 1050px;
-        margin: 0 auto;
-        padding: 1rem 1rem;
-        display: flex;
+        padding: 1rem;
         justify-content: space-between;
         align-items: center;
       }
 
       nav ul {
-        display: flex;
         gap: 8px;
       }
 
       nav a {
         padding: 10px 20px;
-        border-radius: 20px;
         color: #fff;
-      }
-
-      .logo,
-      nav a:hover {
-        transition: background-color 300ms cubic-bezier(0.2, 0, 0, 1);
-        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.12);
-      }
-
-      .logo,
-      nav a:active {
-        transition: background-color 300ms cubic-bezier(0.2, 0, 0, 1);
-        box-shadow: none;
+        background-color: transparent;
       }
 
       .logo {
-        display: flex;
         align-items: center;
-        font-weight: bold;
+        font-weight: 700;
         padding-right: 10px;
-        border-radius: 20px;
+      }
+
+      .cards a,
+      .cards li {
+        flex: 1;
+        display: flex;
+      }
+
+      .logo:hover {
+        background: #ddd;
       }
 
       .logo:active {
-        background: #ddd;
+        background: #ccc;
       }
 
       .logo img {
         width: 40px;
         height: 40px;
         border-radius: 40px;
-        margin-right: 1rem;
+      }
+
+      .logo span {
+        padding-left: 0.75rem;
       }
 
       .hero {
@@ -117,15 +144,15 @@
       }
 
       .telegram {
-        background-color: #0088cc;
+        background-color: #08c;
       }
 
       .telegram:hover {
-        background-color: #0099dd !important;
+        background-color: #09d;
       }
 
       .telegram:active {
-        background-color: #0099dd !important;
+        background-color: #0ae;
       }
 
       .github {
@@ -133,17 +160,17 @@
       }
 
       .github:hover {
-        background-color: #444 !important;
+        background-color: #444;
       }
 
       .github:active {
-        background-color: #444 !important;
+        background-color: #555;
       }
 
       .cards a {
-        display: flex;
-        flex: 1;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        border-radius: 24px;
       }
 
       .cards section {
@@ -152,48 +179,76 @@
       }
 
       .cards h3 {
-        margin: 0.8rem 0 0.5rem 0;
+        margin: 0.8rem 0 0.5rem;
         font-size: 1.75rem;
-      }
-
-      .cards p {
-        padding: 0;
-        margin: 0;
-      }
-      .stacks {
-        display: flex;
-        flex-wrap: wrap;
-      }
-
-      .stack-wrapper {
-        width: 100%;
-        position: relative;
-        padding-right: 15px;
-        padding-left: 15px;
-      }
-
-      .cards a {
-        padding: 1.5rem;
-        border-radius: 24px;
-        transition: border-radius 300ms cubic-bezier(0.2, 0, 0, 1),
-          background-color 300ms cubic-bezier(0.2, 0, 0, 1);
-        background: rgba(11, 87, 208, 0.05);
-      }
-
-      .cards a:hover {
-        background: var(--card-hover);
       }
 
       .cards a:active {
         border-radius: 48px;
         outline: initial;
-        background: var(--card-hover);
-        box-shadow: 0;
       }
 
-      .cards li {
-        width: 100%;
+      .skill-wrapper {
         display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+      }
+
+      .skill-badge {
+        background-color: #000;
+        color: #f9fafb;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        padding: 0.125rem 0.5rem;
+        border-radius: calc(0.5rem - 2px);
+      }
+
+      .skill-badge:hover {
+        background-color: hsl(220.9 39.3% 11%/0.8);
+      }
+
+      .repo-list {
+        font-size: 0.9rem;
+      }
+
+      .repo-list li {
+        padding: 0;
+        margin: 0.5rem 0;
+      }
+
+      .repo-list a {
+        display: block;
+        position: relative;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 0.5rem;
+      }
+
+      .repo-list a:active {
+        border-radius: 1rem;
+      }
+
+      .repo-list h3 {
+        font-size: 1em;
+        margin: 0 0 0.5rem;
+        width: 20rem;
+      }
+
+      .repo-list p {
+        flex: 1;
+        margin: 0;
+        opacity: 0.7;
+      }
+
+      .repo-list span {
+        margin-left: 1rem;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
+
+      .classic-section {
+        margin-top: 2rem;
       }
 
       @media (min-resolution: 2dppx) {
@@ -203,18 +258,14 @@
       }
 
       @media (min-width: 800px) {
+        header,
         main {
           padding-left: 3rem;
           padding-right: 3rem;
         }
 
-        header {
-          padding-left: 3rem;
-          padding-right: 3rem;
-        }
-
         .hero {
-          margin: 6rem 0 8rem 0;
+          margin: 6rem 0 8rem;
         }
 
         .hero h1,
@@ -224,21 +275,29 @@
 
         .cards {
           display: flex;
+          flex-wrap: wrap;
           justify-content: space-between;
+          gap: 2rem;
         }
 
-        .cards li {
-          width: calc(50% - 1rem);
+        .repo-list a {
           display: flex;
+          padding: 1rem;
         }
 
-        .cards li.big {
-          width: 100%;
+        .repo-list li {
+          padding: 0;
+          margin: 0.5rem 0;
         }
 
-        .stack-wrapper {
-          flex: 0 0 50%;
-          max-width: 0 0 50%;
+        .repo-list h3 {
+          margin: 0;
+        }
+
+        .repo-list span {
+          position: static;
+          top: 0;
+          right: 0;
         }
       }
     </style>
@@ -268,124 +327,115 @@
         <h1>I'm fr0staman.</h1>
         <h2>Curious developer.</h2>
       </section>
-      <h2>Tech stack</h2>
-      <ul class="cards stacks"></ul>
-      <h2>My projects</h2>
-      <ul class="cards">
-        <li>
-          <a
-            href="https://play.google.com/store/apps/details?id=com.abillslite"
-          >
-            <img
-              height="140"
-              width="140"
-              src="./assets/images/ABillS_Lite.png"
-            />
-            <section data-repo="ABillSLite">
-              <h3>ABillS Lite</h3>
-              <p>Modern mobile app for Internet service provider</p>
-            </section>
-          </a>
-        </li>
-        <li>
-          <a href="https://t.me/fr0staman_bot">
-            <img
-              height="140"
-              width="140"
-              src="./assets/images/fr0staman_bot.png"
-            />
-            <section data-repo="fr0staman_bot">
-              <h3>fr0staman_bot</h3>
-              <p>Popular funny Telegram bot</p>
-            </section>
-          </a>
-        </li>
-      </ul>
-      <h2>Skills</h2>
-      <p>
-        React, React Native (RN CLI), JavaScript, TypeScript, Bootstrap,
-        Material UI, React-Router, Jest, axios, ES6+, Redux, REST API, MySQL,
-        PostgreSQL, Git
-      </p>
-      <h2>Highlights</h2>
-      <ul class="list-style">
-        <li>Supporting and rewriting complex web admin/user panel</li>
-        <li>Code refactoring, adding Eslint and Prettier</li>
-        <li>Migrating project to Typescript</li>
-        <li>Code review</li>
-      </ul>
-      <h2>Looking for</h2>
-      <p>
-        I’m looking for the opportunity to gain new various skills as well as
-        develop existing ones.
-        <br />
-        I’m looking for a project based primarily on Typescript and React
-        Native.
-        <br />
-        Ideally, with an opportunity to become a FullStack React/Rust engineer
-        in the future.
-        <br />
-        It's interesting for me to mentor someone and getting feedback.
-      </p>
+      <section class="classic-section">
+        <h2>Skills</h2>
+        <div class="skill-wrapper">
+          <div class="skill-badge">JavaScript</div>
+          <div class="skill-badge">TypeScript</div>
+          <div class="skill-badge">Node.js</div>
+          <div class="skill-badge">Python</div>
+          <div class="skill-badge">Rust</div>
+          <div class="skill-badge">React</div>
+          <div class="skill-badge">React Native</div>
+          <div class="skill-badge">Next</div>
+          <div class="skill-badge">Redux</div>
+          <div class="skill-badge">Zustand</div>
+          <div class="skill-badge">RTK</div>
+          <div class="skill-badge">internalization</div>
+          <div class="skill-badge">Nest</div>
+          <div class="skill-badge">MySQL</div>
+          <div class="skill-badge">PostgreSQL</div>
+          <div class="skill-badge">REST API</div>
+          <div class="skill-badge">MUI</div>
+        </div>
+      </section>
+      <section class="classic-section">
+        <h2>My projects</h2>
+        <ul class="cards">
+          <li>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.abillslite"
+            >
+              <img
+                height="140"
+                width="140"
+                src="./assets/images/ABillS_Lite.png"
+              />
+              <section data-repo="ABillSLite">
+                <h3>ABillS Lite</h3>
+                <p>Mobile app for Internet Service Provider</p>
+              </section>
+            </a>
+          </li>
+          <li>
+            <a href="https://t.me/fr0staman_bot">
+              <img
+                height="140"
+                width="140"
+                src="./assets/images/fr0staman_bot.png"
+              />
+              <section data-repo="fr0staman_bot">
+                <h3>fr0staman_bot</h3>
+                <p>Telegram bot with pigs 🐽🐷🐖</p>
+              </section>
+            </a>
+          </li>
+        </ul>
+        <ul class="repo-list"></ul>
+      </section>
     </main>
     <script>
-      const stacks = [
-        {
-          name: "React / React Native",
-          img: "./assets/images/react.svg",
-          desc: "1+ year of experience",
-          big: true,
-        },
-        {
-          name: "TypeScript",
-          img: "./assets/images/typescript.svg",
-          desc: "with React Native",
-        },
-        {
-          name: "JavaScript",
-          img: "./assets/images/javascript.svg",
-          desc: "with React Native",
-        },
-        {
-          name: "Python",
-          img: "./assets/images/python.svg",
-          desc: "pet projects",
-        },
-        {
-          name: "Rust",
-          img: "./assets/images/rust.svg",
-          desc: "in learning",
-        },
-      ];
-      const stackList = document.querySelector(".stacks");
-      stacks.forEach((el) => {
-        const name = document.createElement("h3");
-        name.append(document.createTextNode(el.name));
+      const STAR = "⭐️";
+      fetch("https://api.github.com/users/fr0staman/repos?type=owner")
+        .then((res) => res.json())
+        .then((data) => {
+          const sources = data
+            .filter(
+              (repo) =>
+                !repo.archived &&
+                repo.stargazers_count &&
+                repo.name !== "fr0staman.github.io"
+            )
+            .sort((a, b) => b.stargazers_count - a.stargazers_count);
 
-        const image = document.createElement("img");
-        image.height = 92;
-        image.width = 92;
-        image.src = el.img;
+          const allList = document.querySelector(".repo-list");
+          sources.forEach((repo) => {
+            const section = document.querySelector(
+              '[data-repo="' + repo.name + '"]'
+            );
 
-        const section = document.createElement("section");
-        section.appendChild(name);
+            if (section) {
+              const stars = document.createElement("span");
+              stars.appendChild(
+                document.createTextNode(STAR + " " + repo.stargazers_count)
+              );
+              section.appendChild(stars);
+              return;
+            }
 
-        if (el.desc) {
-          const description = document.createElement("p");
-          description.append(document.createTextNode(el.desc));
-          section.appendChild(description);
-        }
+            const entry = document.createElement("li");
+            const link = document.createElement("a");
+            link.href = repo.html_url;
+            const name = document.createElement("h3");
+            name.appendChild(document.createTextNode(repo.name));
+            link.appendChild(name);
 
-        const stack = document.createElement("a");
-        stack.className = "stack-wrapper";
-        stack.appendChild(image);
-        stack.appendChild(section);
+            const description = document.createElement("p");
+            const checkedDesc = repo.description ?? "";
+            description.appendChild(document.createTextNode(checkedDesc));
+            link.appendChild(description);
 
-        const li = document.createElement("li");
-        li.appendChild(stack);
-        el.big ? (li.className = "big") : null;
-        stackList.appendChild(li);
-      });
+            const stars = document.createElement("span");
+            stars.appendChild(
+              document.createTextNode(repo.stargazers_count + " " + STAR)
+            );
+            link.appendChild(stars);
+
+            entry.appendChild(link);
+
+            allList.appendChild(entry);
+          });
+        });
     </script>
   </body>
 </html>
